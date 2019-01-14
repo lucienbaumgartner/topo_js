@@ -21,9 +21,9 @@ var color = d3.scaleQuantile()
     .range(["rgb(237, 248, 233)", "rgb(186, 228, 179)", "rgb(116,196,118)", "rgb(49,163,84)", "rgb(0,109,44)"]);
 // append d3 elements
 // load json
-d3.json("/cantons.json").then(function(swiss) {
+d3.json("./cantons.json").then(function(swiss) {
     // load metadata
-    d3.csv("/bip.csv").then(function(data) {
+    d3.csv("./bip.csv").then(function(data) {
       // scale color domain to metadata
       color.domain([ d3.min(data, function(d){ return +d.value; }),
         d3.max(data, function(d){ return +d.value; })
